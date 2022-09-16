@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { GetRegionList } from "../../../services/Regions";
 import { DeleteRegionService } from "../../../services/Regions";
 import { UpdateRegionService } from "../../../services/Regions";
-import "./ShowRegion.css";
-const ShowRegion = () => {
+import "./ViewRegion.css";
+const ViewAllRegions= () => {
   // const [editedCateogry, setEditedCategory] = useState({_id: null, category_name: null})
   const [regions, setregionstate] = useState([]);
   const [_id, setId] = useState("");
@@ -97,10 +97,10 @@ const ShowRegion = () => {
                 </td>
                 <td>
                   <button
-                    className="unique1"
+                    className="uniquee"
                     onClick={() => selectRegion(item)}
                   >
-                    Update
+                   Edit
                   </button>
                 </td>
               </tr>
@@ -135,4 +135,4 @@ const ShowRegion = () => {
     </div>
   );
 };
-export default ShowRegion;
+export default  ViewAllRegions;

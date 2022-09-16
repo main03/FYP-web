@@ -75,10 +75,11 @@ export const AddCategories = async (category_name,filename) => {
   };
   
   export const UpdateCategoriesService = (item) => {
-    
+   
     
     fetch(`${process.env.REACT_APP_LOCAL_HOST_PATH}category/${item._id}`, {
       method: "PUT",
+    
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

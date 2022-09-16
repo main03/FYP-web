@@ -29,7 +29,7 @@ const handlesubmit=(e)=>
 {
     alert("Data Sent Successfully");
     e.preventDefault()
-    navigate('/showregion');
+    navigate('/viewallregions');
 }
   
 

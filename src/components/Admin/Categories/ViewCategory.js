@@ -10,12 +10,7 @@ const ViewListOfCategory = () => {
   const navigate = useNavigate();
   const [categorieslist, setcategoryarray] = useState([]);
   const [_id, setId] = useState("");
-  const[filename,setfilename]=useState("");
-  // const[Updatedfilename,setUpdatedfilename]=useState("");
-  //  let updatedfile=useRef("");
-  // let  id=useRef('');
-  // let  _id=useRef('');
-
+ 
   let category_name=useRef("");
   let editCategoryName = useRef("");
  
@@ -36,31 +31,21 @@ useEffect(() => {
    ListOfCategories();
    
   }, []);
-  const onchangefile = (e) => {
-    
-    setfilename(e.target.files[0]);
-    console.log(filename);
-  };
+ 
 function selectCategory(Category) {
-    // id=Category._id
-    // let e;
+    
     console.log("In select category consolee");
     setId(Category._id);
     category_name=Category.editCategoryName;
     editCategoryName.current.value = Category.category_name;
-    onchangefile();
-    // filename=Category.target.files[0];
-    // console.log(filename);
-    // console.log(Category.target.files[0]);
-    // Updatedfilename.target.files[0]=Category.filename;
+ 
   }
   const updateCategory = () => {
 
     const updatedCategoryName = editCategoryName.current.value;
-    // const updatedfileis= Updatedfilename.target.files[0]
     console.log("updaed", updatedCategoryName);
     let item = { category_name: updatedCategoryName,_id };
-    // CategoryImage: updatedfileis 
+  
    UpdateCategoriesService(item)
    ListOfCategories();
  };
@@ -134,18 +119,7 @@ function selectCategory(Category) {
               ref={editCategoryName}
               type="text"
             />
-            <div>
-            <br></br>
-        <label htmlFor="file">Choose a file</label>
-        <input id="mouse"
-        type="file"
-        filename="CategoryImage"
-        // className="form-control-file"
-        onChange={onchangefile}
-      
-      />
-        </div>
-
+           
             <span></span>
             <br></br>
           </div>

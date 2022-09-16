@@ -1,5 +1,5 @@
 
-const AdminLogin = async (name, password) => {
+const LoginforAdmin= async (name, password) => {
     try {
     
       const response = await fetch(`${process.env.REACT_APP_LOCAL_HOST_PATH}admin/login`, {
@@ -14,13 +14,13 @@ const AdminLogin = async (name, password) => {
         throw new Error(`Error! status:`);
       }
       const result = await response.json();
-      // return result;
-      console.warn(result);
+      
       localStorage.setItem("admintoken",JSON.stringify(result.token))
+      return result;
     } catch (err) {
       console.log(err);
     }
   };
   
-  export default AdminLogin;
+  export default LoginforAdmin;
   

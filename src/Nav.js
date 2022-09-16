@@ -14,7 +14,7 @@ const Nav=()=>
                 <li><Link to="/addregion"><button>Regions</button></Link></li>
                 <li><Link to="/addedcategories"><button>Categories</button></Link></li>
                 <li><Link to="/addedproduct"><button>Add Product</button></Link></li>
-                <li><Link to="/showregion"><button>View Region</button></Link></li>
+                <li><Link to="/viewallregions"><button>View Region</button></Link></li>
                 <li><Link to="/viewlistofcategory"><button>View Categories</button></Link></li>
                 <li><Link to="/viewlistofproduct"><button>View Product</button></Link></li>
                 <li><Link to="/vieworder"><button>View Order</button></Link></li>

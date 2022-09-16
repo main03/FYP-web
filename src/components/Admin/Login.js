@@ -1,10 +1,10 @@
 import React from "react";
 import { useRef } from "react";
-import AdminLogin from "../../services/Login"
+import LoginforAdmin  from '../../services/Login'
 // import {useNavigate} from 'react-router-dom';
 import "./AdminLogin.css";
 
-const AdminLoginn = () => {
+const Login = () => {
   
     const name=useRef(null);
     const password=useRef(null);
@@ -49,7 +49,7 @@ const AdminLoginn = () => {
           className="appButton"
         //   disabled={buttonStatus}
           onClick={() =>
-            AdminLogin(name.current.value,password.current.value)
+            LoginforAdmin(name.current.value,password.current.value)
           }
         >
           Submit
@@ -59,4 +59,4 @@ const AdminLoginn = () => {
     </div>
   );
 };
-export default AdminLoginn;
+export default Login;

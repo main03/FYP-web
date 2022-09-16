@@ -1,15 +1,26 @@
 import React from "react";
 import { useRef } from "react";
-import AdminBackend from "./AdminBackend";
+import AdminLogin from "../../services/Login"
+// import {useNavigate} from 'react-router-dom';
 import "./AdminLogin.css";
 
-const AdminLogin = () => {
+const AdminLoginn = () => {
   
     const name=useRef(null);
     const password=useRef(null);
+    // const navigate = useNavigate();
+
  
   const handlesubmit = (e) => {
+    if(name.current.value==="Sheharyar" && password.current.value==="admin"){
     alert("Admin Login SuccessFully at frontend");
+    window.location.href = '/addedcategories'
+    // navigate("/addcategories")
+   
+    }
+    else{
+      alert("Add correct credentials");
+    }
 
     e.preventDefault();
   };
@@ -38,7 +49,7 @@ const AdminLogin = () => {
           className="appButton"
         //   disabled={buttonStatus}
           onClick={() =>
-            AdminBackend(name.current.value,password.current.value)
+            AdminLogin(name.current.value,password.current.value)
           }
         >
           Submit
@@ -48,4 +59,4 @@ const AdminLogin = () => {
     </div>
   );
 };
-export default AdminLogin;
+export default AdminLoginn;

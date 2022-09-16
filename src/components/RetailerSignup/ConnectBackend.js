@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-const ConnectBackend= async (name,email,password)=>
+const ConnectBackend= async (First_name,Last_name,Phone_no,password)=>
 
  {
     
@@ -7,11 +7,12 @@ const ConnectBackend= async (name,email,password)=>
       const hash = bcrypt.genSaltSync(10);
       const hashedpassword = bcrypt.hashSync(password, hash);
     
-      console.log(`Data going in backend as name: ${name} and email is ${email} and password is ${password}`);
-     const response= await fetch("http://localhost:5000/register",{
+      console.log(`Data going in backend as name: ${First_name} and  and password is ${Last_name}
+      and pgone number is ${Phone_no} and password is ${password}`);
+     const response= await fetch("http://localhost:5000/retailer",{
         // await
          method:'post',
-         body:JSON.stringify({name,email,
+         body:JSON.stringify({First_name,Last_name,Phone_no,
         password: hashedpassword}),
          headers:{
              'Content-Type':'application/json'
@@ -30,8 +31,8 @@ const ConnectBackend= async (name,email,password)=>
     return result; 
  }
  catch (err) {
-     console.log(err);
+    //  console.log(err);
    }
-   console.log("data not recieved in backend");
+  //  console.log("data not recieved in backend");
  }
 export default ConnectBackend;

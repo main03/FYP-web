@@ -20,9 +20,11 @@
   font-family: "Poppins", sans-serif;
 }
 body{
+  
+
   margin: 0;
   padding: 0;
-  background: linear-gradient(120deg,#85bcdf, #a750cc);
+  background: linear-gradient(120deg,#3D7EAA, #d7dde8);
   height: 100vh;
   overflow: hidden;
 }
@@ -36,7 +38,7 @@ h1{
     display: inline-block;
 }
 table, th, td {
-    border: 5px solid rgb(91, 94, 95);
+    border: 5px solid rgb(39, 41, 35);
     border-collapse: collapse;
   }
   
@@ -44,3 +46,11 @@ table, th, td {
     margin-left: auto; 
     margin-right: auto;
   }
+  .unique:hover
+{
+    background-color: green;
+}
+.unique1:hover
+{
+    background-color: red;
+}

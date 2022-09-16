@@ -1,18 +1,35 @@
-import  { useRef } from "react";
+import  { useEffect, useRef,useState} from "react";
+import {useNavigate} from 'react-router-dom';
 // import "./SignUp.css";
 // import ConnectBackend from "./ConnectBackend";
-import ConnectRegionapi from "./ConnectRegionapi";
+import { AddRegion } from "../../../services/Regions";
 
-const AdminRegion = () => {
+const AddedRegion = () => {
+  const navigate = useNavigate();
+
+ 
+  useEffect(()=>
+  {
+    if(!localStorage.getItem('admintoken'))
+    {
+      navigate('/adminlogin')
+    }
+   
+  },[])
+
 
   const region = useRef(null);
   const capital=useRef(null);
-  const refid='6300af4997dcffe28b32da99';
+  
+  // const refid='6300af4997dcffe28b32da99';
+  
 
   
-const handlesubmit=()=>
+const handlesubmit=(e)=>
 {
     alert("Data Sent Successfully");
+    e.preventDefault()
+    navigate('/showregion');
 }
   
 
@@ -38,6 +55,9 @@ const handlesubmit=()=>
             ref={capital}
            
           />
+          
+          
+      
        
         </div>
        
@@ -49,16 +69,15 @@ const handlesubmit=()=>
           // disabled={(name.current.value === '' || email.current.value==='' || password.current.value==='')}
           onClick={() => {
           
-             ConnectRegionapi(region.current.value,capital.current.value,refid);
+             AddRegion(region.current.value,capital.current.value);
             }}
           
-        >Submit</button>
+        >Add</button>
 
       </form>
     </div>
   );
 };
-export default AdminRegion;
+export default AddedRegion;
 
 
-//  disabled={name.current.value === '' || email.current.value==='' || password.current.value===''}

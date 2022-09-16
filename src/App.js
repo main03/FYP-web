@@ -1,38 +1,41 @@
 
+
 import './App.css';
 import Nav from './Nav';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Footer from './Footer/Footer';
-import SignUp from './components/Retailer/SignUp';
-import Login from './components/Login/Login';
-import AdminLogin from './components/AdminLogin/AdminLogin';
-import AdminRegion from './components/AdminLogin/AdminRegion/AdminRegion';
-import AdminCategories from './components/AdminLogin/AdminCategories/AdminCategories';
-import AdminProduct from './components/AdminLogin/AdminProduct/AdminProduct';
-import ShowRegion from './components/AdminLogin/AdminRegion/ShowRegion';
-import ViewCategory from './components/AdminLogin/AdminCategories/ViewCategory';
-import ViewProduct from './components/AdminLogin/AdminProduct/ViewProduct';
+import SignUp from './components/RetailerSignup/SignUp';
+import Login from './components/RetailerLogin/Login';
+import AdminLoginn from './components/AdminLogin/AdminLogin';
+import AddedRegion from './components/AdminLogin/Regions/AddRegion';
+import AddedCategories from './components/AdminLogin/Categories/AddCategories';
+import AddedProduct from './components/AdminLogin/Products/AddProduct';
+import ShowRegion from './components/AdminLogin/Regions/ShowRegion';
+import ViewListOfCategory from './components/AdminLogin/Categories/ViewCategory';
+import ViewListOfProduct from './components/AdminLogin/Products/ViewProduct';
+import ViewOrder from './components/AdminLogin/Orders/ViewOrder';
+import AddUpcomingOffers from './components/AdminLogin/UpcomingOffers/AddUpcomingOffers';
 
 function App() {
+ 
   return (
     <div className="App">
     <BrowserRouter>
     <Nav />
     <Routes>
-      {/* <Route path="/" element={<h1>Product Component</h1>}/> */}
-      <Route path="/add" element={<h1>Add Product Component</h1>}/>
-      <Route path="/update" element={<h1>Update Product Component</h1>}/>
-      <Route path="/logout" element={<h1>Logout  Component</h1>}/>
-      <Route path="/profile" element={<h1>Profile Component</h1>}/>
+      <Route path="/" element={<h1><i>B2B APP WELCOMES YOU !! </i></h1>}/>
+      <Route path="" element={<h1><i>404 NOT FOUNDD </i></h1>}/>
       <Route path="/signup" element={<SignUp />}/>
       <Route path="/login" element={<Login />}/>
-      <Route path="/adminlogin" element={<AdminLogin />}/>
-      <Route path="/adminregion" element={<AdminRegion />}/>
-      <Route path="/admincategories" element={<AdminCategories />}/>
-      <Route path="/adminproduct" element={<AdminProduct />}/>
+      <Route path="/adminlogin" element={<AdminLoginn />}/>
+      <Route path="/addregion" element={<AddedRegion />}/>
+      <Route path="/addedcategories" element={<AddedCategories/>}/>
+      <Route path="/addedproduct" element={<AddedProduct />}/>
       <Route path="/showregion" element={<ShowRegion />}/>
-      <Route path="/viewcategory" element={<ViewCategory />}/>
-      <Route path="/viewproduct" element={<ViewProduct />}/>
+      <Route path="/viewlistofcategory" element={<ViewListOfCategory />}/>
+      <Route path="/viewlistofproduct" element={<ViewListOfProduct />}/>
+      <Route path="/viewOrder" element={<ViewOrder />}/>
+      <Route path="/upcomingoffers" element={<AddUpcomingOffers />}/>
      
      
      

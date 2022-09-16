@@ -4,7 +4,7 @@ const Footer=()=>
 {
     return(
         <div className="foot">
-    <h2>FYP 2022 .</h2>
+    <h2>*.EaseShop B2B Web Application.*</h2>
         </div>
     );
 }
